@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đại hội - Danang Hotel Association</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ef4444',
+                        secondary: '#dc2626',
+                        dark: '#0f0f0f',
+                        'dark-light': '#1a1a1a',
+                        'dark-medium': '#2a2a2a',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(239, 68, 68, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(239, 68, 68, 0.6)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark text-white font-sans overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <img src="https://static.wixstatic.com/media/bc87b8_91f521019b8d4ed1a3bb8bd39a44a0db~mv2.png/v1/fill/w_88,h_78,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bc87b8_91f521019b8d4ed1a3bb8bd39a44a0db~mv2.png" 
+                             alt="DHA Logo" 
+                             class="w-16 h-16 object-contain">
+                    </div>
+                    <div class="text-2xl font-bold bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                        DANANG Hotel Association
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="home.html" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Trang chủ
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="congress.html" class="relative text-primary transition-colors duration-300 font-medium group">
+                        Đại hội
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-secondary"></span>
+                    </a>
+                    <a href="#news" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Tin Tức
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#members" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Thành viên
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#register" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Đăng ký
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden text-white hover:text-primary transition-colors duration-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden bg-dark/98 backdrop-blur-xl border-t border-white/10">
+                <div class="px-6 py-4 space-y-4">
+                    <a href="home.html" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Trang chủ
+                    </a>
+                    <a href="congress.html" class="block text-primary transition-colors duration-300 font-medium py-2">
+                        Đại hội
+                    </a>
+                    <a href="#news" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Tin Tức
+                    </a>
+                    <a href="#members" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Thành viên
+                    </a>
+                    <a href="#register" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Đăng ký
+                    </a>
+                    <a href="#about" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        About
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative py-20 bg-gradient-to-br from-dark-light to-dark-medium">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center px-4 py-2 mb-6 bg-primary/10 rounded-full border border-primary/20">
+                        <i class="fas fa-calendar-alt text-primary mr-2"></i>
+                        <span class="text-primary font-medium">Đại hội</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                        <span class="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                            Đại hội Hội Khách sạn
+                        </span>
+                        <br>
+                        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                            Đà Nẵng lần thứ III
+                        </span>
+                    </h1>
+                    
+                    <p class="text-2xl md:text-3xl font-bold text-primary mb-4">
+                        Nhiệm kỳ 2021-2025
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-lg text-white/70">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar text-primary mr-2"></i>
+                            <span>17-12 - 2021</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                            <span>Cung Hội nghị Quốc tế Furama Đà Nẵng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Congress Content -->
+        <section class="py-20 bg-gradient-to-b from-dark-medium to-dark-light">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Content -->
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+                                Nội dung Đại hội
+                            </h2>
+                            
+                            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                                <h3 class="text-xl font-bold text-primary mb-4">
+                                    Sự kiện chính thức bắt đầu
+                                </h3>
+                                <div class="flex items-center gap-4 mb-6">
+                                    <div class="text-2xl font-bold text-white">17 - 12 - 2021</div>
+                                    <div class="text-lg text-white/70">01:30 pm</div>
+                                </div>
+                                
+                                <p class="text-white/80 leading-relaxed mb-6">
+                                    Đại hội Hội Khách sạn Đà Nẵng lần thứ III (Nhiệm kỳ 2021-2025) sẽ diễn ra tại cung hội nghị quốc tế Furama Đà Nẵng vào ngày 17/12/2021. Nhiệm kỳ III của Hội Khách sạn Đà Nẵng là giai đoạn đầy thách thức đối với các cơ sở lưu trú du lịch và cũng như đối với ngành du lịch Việt Nam nói chung và Đà Nẵng nói riêng khi tình hình dịch Covid-19 vẫn đang diễn biến phức tạp và chỉ có thể khả quan hơn vào cuối năm 2022.
+                                </p>
+                                
+                                <p class="text-white/80 leading-relaxed">
+                                    Tuy nhiên với ý chí quyết tâm, tinh thần đoàn kết Hội Khách sạn Đà Nẵng tự tin sẽ tìm ra những phương hướng và đề ra những chiến lược để giúp đỡ các hội viên khôi phục kinh doanh, phát triển bền vững và mang đến những dịch vụ chất lượng, mến khách.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Congress Image -->
+                    <div class="relative">
+                        <div class="relative rounded-2xl overflow-hidden h-96">
+                            <img src="https://static.wixstatic.com/media/9d071b_8d2a3a542b8a457bade2a3d871e22a13~mv2.jpg/v1/fill/w_1904,h_985,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9d071b_8d2a3a542b8a457bade2a3d871e22a13~mv2.jpg" 
+                                 alt="Đại hội Hội Khách sạn Đà Nẵng" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="py-20 bg-gradient-to-b from-dark-light to-dark-medium">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">
+                        <span class="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                            Thành tựu
+                        </span>
+                    </h2>
+                    <p class="text-xl text-white/70 max-w-2xl mx-auto">
+                        Những con số ấn tượng của Hội Khách sạn Đà Nẵng
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="text-5xl font-black text-primary mb-4 group-hover:scale-110 transition-transform duration-300">114</div>
+                            <p class="text-white/70 font-medium">Khách sạn hội viên</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="text-5xl font-black text-primary mb-4 group-hover:scale-110 transition-transform duration-300">200</div>
+                            <p class="text-white/70 font-medium">Học viên tham gia các khóa đào tạo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="text-5xl font-black text-primary mb-4 group-hover:scale-110 transition-transform duration-300">5900</div>
+                            <p class="text-white/70 font-medium">Khách tham dự sự kiện của Hội</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="text-5xl font-black text-primary mb-4 group-hover:scale-110 transition-transform duration-300">291</div>
+                            <p class="text-white/70 font-medium">Suất quà trong các hoạt động từ thiện</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Representatives Section -->
+        <section id="members" class="py-20 bg-gradient-to-b from-dark-medium to-dark-light">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">
+                        <span class="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                            Đại biểu
+                        </span>
+                    </h2>
+                    <p class="text-xl text-white/70 max-w-2xl mx-auto">
+                        Ban chấp hành Hội khách sạn Đà Nẵng khóa III
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Representative cards will be added here when images are provided -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-4xl text-white/50"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Nguyễn Đức Quỳnh</h3>
+                            <p class="text-primary font-medium">Chủ tịch hội Khách sạn Đà Nẵng</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-4xl text-white/50"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Lê Thị Ái Diệp</h3>
+                            <p class="text-primary font-medium">Phó chủ tịch – Trưởng ban Hỗ trợ kết nối và Chính sách nhà nước</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-4xl text-white/50"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Phạm Thị Thanh Tuyền</h3>
+                            <p class="text-primary font-medium">Phó chủ tịch – Trưởng ban Phát triển Hội viên</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors Section -->
+        <section class="py-20 bg-gradient-to-b from-dark-light to-dark-medium">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">
+                        <span class="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                            Nhà tài trợ
+                        </span>
+                    </h2>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 text-center">
+                    <div class="text-white/50">
+                        <i class="fas fa-handshake text-6xl mb-4"></i>
+                        <p>Logo nhà tài trợ sẽ được thêm vào</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="py-20 bg-gradient-to-b from-dark-light to-dark-medium">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">
+                        <span class="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                            Tin Tức
+                        </span>
+                    </h2>
+                    <p class="text-xl text-white/70 max-w-2xl mx-auto">
+                        Cập nhật những tin tức mới nhất về Hội Khách sạn Đà Nẵng
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="w-full h-48 bg-white/10 rounded-lg mb-4 flex items-center justify-center">
+                                <i class="fas fa-newspaper text-4xl text-white/50"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Cuộc thi Đầu bếp tài năng Đà Nẵng 2022</h3>
+                            <p class="text-white/70 text-sm mb-4">Nov 22, 2022 • 2 min read</p>
+                            <p class="text-white/60">Sự kiện thường niên do Hiệp hội Khách sạn Đà Nẵng tổ chức...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="w-full h-48 bg-white/10 rounded-lg mb-4 flex items-center justify-center">
+                                <i class="fas fa-newspaper text-4xl text-white/50"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Hội chợ Du lịch quốc tế VITM Đà Nẵng 2022</h3>
+                            <p class="text-white/70 text-sm mb-4">Nov 22, 2022 • 3 min read</p>
+                            <p class="text-white/60">Hội chợ Du lịch quốc tế Đà Nẵng sẽ diễn ra từ ngày 9-11/12...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="w-full h-48 bg-white/10 rounded-lg mb-4 flex items-center justify-center">
+                                <i class="fas fa-newspaper text-4xl text-white/50"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">ĐÀO TẠO VỀ THỊ TRƯỜNG ẤN ĐỘ</h3>
+                            <p class="text-white/70 text-sm mb-4">Nov 22, 2022 • 2 min read</p>
+                            <p class="text-white/60">Khóa đào tạo về giải pháp kinh doanh và marketing cho thị trường Ấn Độ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="py-20 bg-gradient-to-b from-dark-medium to-dark-light">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">
+                        <span class="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                            Đăng ký tham dự
+                        </span>
+                    </h2>
+                    <p class="text-xl text-white/70">
+                        Đăng ký nhận thông tin đại hội qua email của bạn
+                    </p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-white font-medium mb-2">Email</label>
+                            <input type="email" 
+                                   class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary transition-colors duration-300"
+                                   placeholder="Nhập email của bạn">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Họ và tên</label>
+                            <input type="text" 
+                                   class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary transition-colors duration-300"
+                                   placeholder="Nhập họ và tên">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Công ty/Tổ chức</label>
+                            <input type="text" 
+                                   class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-primary transition-colors duration-300"
+                                   placeholder="Nhập tên công ty/tổ chức">
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 transform hover:-translate-y-1">
+                            Đăng ký
+                        </button>
+                    </form>
+                    
+                    <p class="text-center text-white/60 mt-6">
+                        Vui lòng đăng ký tham dự qua email
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gradient-to-b from-dark-light to-dark-medium">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">
+                        <span class="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                            About
+                        </span>
+                    </h2>
+                    <p class="text-xl text-white/70 max-w-2xl mx-auto">
+                        Giới thiệu về Hội Khách sạn Đà Nẵng
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-white mb-6">
+                            Hội khách sạn Đà Nẵng
+                        </h3>
+                        <h4 class="text-2xl font-bold text-primary mb-4">
+                            Danang Hotel Association
+                        </h4>
+                        <p class="text-white/80 leading-relaxed mb-6">
+                            Hội Khách sạn Đà Nẵng là Hội du lịch chuyên ngành của Hiệp Hội du lịch Đà Nẵng bao gồm các doanh nghiệp, tổ chức kinh tế và công dân Việt Nam hoạt động hợp pháp trong lĩnh vực Kinh doanh cơ sở lưu trú du lịch và Nhà hàng.
+                        </p>
+                        <p class="text-white/80 leading-relaxed">
+                            Mục đích của Hội là liên kết, hợp tác, hỗ trợ nhau về kinh tế - kỹ thuật về kinh doanh dịch vụ, tạo bình ổn thị trường, nâng cao giá trị chất lượng, sản phẩm du lịch, khả năng cạnh tranh trong và ngoài nước của hội viên; đại diện và bảo vệ quyền, lợi ích hợp pháp của Hội viên.
+                        </p>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="relative rounded-2xl overflow-hidden h-96">
+                            <img src="https://static.wixstatic.com/media/c19c76_8599f94d13444813a78ab5704f83932f~mv2_d_5760_3620_s_4_2.jpg/v1/fill/w_1904,h_678,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c19c76_8599f94d13444813a78ab5704f83932f~mv2_d_5760_3620_s_4_2.jpg" 
+                                 alt="Hội Khách sạn Đà Nẵng" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <!-- Footer Content -->
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand Section -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <img src="https://static.wixstatic.com/media/bc87b8_91f521019b8d4ed1a3bb8bd39a44a0db~mv2.png/v1/fill/w_88,h_78,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bc87b8_91f521019b8d4ed1a3bb8bd39a44a0db~mv2.png" 
+                                 alt="DHA Logo" 
+                                 class="w-16 h-16 object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">DHA</h3>
+                            <p class="text-white/70">Danang Hotel Association</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 leading-relaxed">
+                        Hiệp hội Khách sạn Đà Nẵng - Nơi kết nối và phát triển ngành du lịch khách sạn tại Đà Nẵng.
+                    </p>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-primary">Thông tin liên hệ</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-white/60 text-sm">Email</p>
+                                <a href="mailto:hoikhachsandanang@gmail.com" class="text-white hover:text-primary transition-colors duration-300">
+                                    hoikhachsandanang@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-white/60 text-sm">Địa chỉ</p>
+                                <p class="text-white">Đà Nẵng, Việt Nam</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Section -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-primary">Theo dõi chúng tôi</h3>
+                    <p class="text-white/60">
+                        Kết nối với chúng tôi trên các mạng xã hội để cập nhật tin tức mới nhất.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="group w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fab fa-facebook-f text-white group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="group w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fab fa-twitter text-white group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="group w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fab fa-instagram text-white group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="group w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fab fa-linkedin-in text-white group-hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 border-t border-white/10">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-white/50 text-sm">
+                        © 2024 by DHA. Proudly created with modern web technologies.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-white/50 hover:text-primary transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-white/50 hover:text-primary transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-white/50 hover:text-primary transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links with header offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = 80; // Height of fixed header
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-dark/98');
+                header.classList.remove('bg-dark/95');
+            } else {
+                header.classList.add('bg-dark/95');
+                header.classList.remove('bg-dark/98');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.className = 'fas fa-bars text-xl';
+                } else {
+                    menuIcon.className = 'fas fa-times text-xl';
+                }
+            });
+            
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = 'fas fa-bars text-xl';
+                });
+            });
+            
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = 'fas fa-bars text-xl';
+                }
+            });
+        }
+
+        // Form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ lại sớm nhất.');
+            });
+        }
+    </script>
+</body>
+</html>

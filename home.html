@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danang Hotel Association - Trang Chủ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ef4444',
+                        secondary: '#dc2626',
+                        dark: '#0f0f0f',
+                        'dark-light': '#1a1a1a',
+                        'dark-medium': '#2a2a2a',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(239, 68, 68, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(239, 68, 68, 0.6)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark text-white font-sans overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <img src="https://static.wixstatic.com/media/bc87b8_91f521019b8d4ed1a3bb8bd39a44a0db~mv2.png/v1/fill/w_88,h_78,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bc87b8_91f521019b8d4ed1a3bb8bd39a44a0db~mv2.png" 
+                             alt="DHA Logo" 
+                             class="w-16 h-16 object-contain">
+                    </div>
+                    <div class="text-2xl font-bold bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                        DANANG Hotel Association
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Trang chủ
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="congress.html" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Đại hội
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#news" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Tin Tức
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#members" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Thành viên
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#register" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        Đăng ký
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="relative text-white hover:text-primary transition-colors duration-300 font-medium group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden text-white hover:text-primary transition-colors duration-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden bg-dark/98 backdrop-blur-xl border-t border-white/10">
+                <div class="px-6 py-4 space-y-4">
+                    <a href="#home" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Trang chủ
+                    </a>
+                    <a href="congress.html" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Đại hội
+                    </a>
+                    <a href="#news" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Tin Tức
+                    </a>
+                    <a href="#members" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Thành viên
+                    </a>
+                    <a href="#register" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        Đăng ký
+                    </a>
+                    <a href="#about" class="block text-white hover:text-primary transition-colors duration-300 font-medium py-2">
+                        About
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden" id="home">
+        <!-- Video Background -->
+        <video class="absolute inset-0 w-full h-full object-cover -z-20" autoplay muted loop>
+            <source src="https://video.wixstatic.com/video/bc87b8_d9d0e5bd70434cfc94db3427c5f004fa/720p/mp4/file.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Gradient Overlay - Lighter for better video visibility -->
+        <div class="absolute inset-0 bg-gradient-to-br from-dark/40 via-dark/30 to-primary/10 -z-10"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-secondary/20 rounded-full blur-xl animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full blur-lg animate-float" style="animation-delay: 4s;"></div>
+        
+        <!-- Hero Content - Smaller and positioned to not overlap video -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6 pt-20">
+            <!-- Badge -->
+            <div class="inline-flex items-center px-4 py-2 mb-6 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                <i class="fas fa-star text-primary mr-2 text-sm"></i>
+                <span class="text-xs font-medium">Hiệp hội Khách sạn Đà Nẵng</span>
+            </div>
+            
+            <!-- Main Title - Smaller -->
+            <h1 class="text-4xl md:text-5xl font-black mb-4 leading-tight">
+                <span class="bg-gradient-to-r from-white via-white to-primary bg-clip-text text-transparent">
+                    Danang Hotel
+                </span>
+                <br>
+                <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Association
+                </span>
+            </h1>
+            
+            <!-- Subtitle - Smaller -->
+            <p class="text-lg md:text-xl mb-3 text-white/90 font-medium">
+                Nơi cung cấp các thông tin liên quan đến dịch vụ lưu trú tại Đà Nẵng!
+            </p>
+            
+            <!-- Description - Smaller -->
+            <p class="text-base md:text-lg mb-8 text-white/70 max-w-2xl mx-auto leading-relaxed">
+                Where you can find all information about Danang Accommodation and Tourism.
+            </p>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <i class="fas fa-chevron-down text-white/60 text-xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-20 bg-gradient-to-b from-dark-light to-dark-medium">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 mb-6 bg-primary/10 rounded-full border border-primary/20">
+                    <i class="fas fa-calendar-star text-primary mr-2"></i>
+                    <span class="text-primary font-medium">Sự kiện & Tin tức</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    <span class="bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+                        Danang Hotel
+                    </span>
+                    <br>
+                    <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        Association
+                    </span>
+                </h2>
+                <p class="text-xl text-white/70 max-w-2xl mx-auto mb-4">
+                    Nơi cung cấp các thông tin liên quan đến dịch vụ lưu trú tại Đà Nẵng!
+                </p>
+                <p class="text-lg text-white/60 max-w-2xl mx-auto">
+                    Where you can find all information about Danang Accomodation and Tourism.
+                </p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-primary/30 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
+                    <!-- Image -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://static.wixstatic.com/media/bc87b8_dee6e60e6b794766a9bcfe4eb425cbae~mv2.jpg/v1/fill/w_306,h_226,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/ThiDauBep.jpg" 
+                             alt="Cuộc thi Đầu bếp Tài năng Đà Nẵng 2022" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1 bg-primary rounded-full text-white text-sm font-medium">
+                            <i class="fas fa-trophy mr-1"></i>
+                            Cuộc thi
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-primary transition-colors duration-300">
+                            Cuộc thi Đầu bếp Tài năng Đà Nẵng 2022
+                        </h3>
+                        <p class="text-white/70 leading-relaxed mb-4">
+                            Đây là sự kiện thường niên do Hiệp hội Khách sạn Đà Nẵng tổ chức nhằm tạo ra không gian giao lưu, chia sẻ kinh nghiệm và nâng cao kỹ năng cho các đầu bếp tại Đà Nẵng.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300">
+                            <span>Xem chi tiết</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-primary/30 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
+                    <!-- Image -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://static.wixstatic.com/media/bc87b8_d844a11250354e5590543057c1fec44c~mv2.jpg/v1/crop/x_0,y_3,w_600,h_443/fill/w_306,h_226,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/VITM1.jpg" 
+                             alt="Hội chợ Du lịch quốc tế VITM Đà Nẵng 2022" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1 bg-secondary rounded-full text-white text-sm font-medium">
+                            <i class="fas fa-globe mr-1"></i>
+                            Hội chợ
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-primary transition-colors duration-300">
+                            Hội chợ Du lịch quốc tế VITM Đà Nẵng 2022
+                        </h3>
+                        <p class="text-white/70 leading-relaxed mb-4">
+                            Theo DNVN, ngày 8/10 tại Đà Nẵng, Hiệp hội Du lịch Việt Nam phối hợp với Hiệp hội Du lịch Đà Nẵng tổ chức họp báo giới thiệu Hội chợ Du lịch quốc tế Đà Nẵng.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300">
+                            <span>Xem chi tiết</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-primary/30 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
+                    <!-- Image -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://static.wixstatic.com/media/bc87b8_7678dae6f4964be2b0d12dc9141b508b~mv2.jpg/v1/fill/w_306,h_226,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IBHDaoTao.jpg" 
+                             alt="ĐÀO TẠO VỀ THỊ TRƯỜNG ẤN ĐỘ" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-primary to-secondary rounded-full text-white text-sm font-medium">
+                            <i class="fas fa-graduation-cap mr-1"></i>
+                            Đào tạo
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-primary transition-colors duration-300">
+                            ĐÀO TẠO VỀ THỊ TRƯỜNG ẤN ĐỘ
+                        </h3>
+                        <p class="text-white/70 leading-relaxed mb-4">
+                            Ngày 06/10/2022, tại Trung tâm Hội nghị Quốc tế ICP - Furama Resort Đà Nẵng, Học viện Đào tạo Khách sạn IBH phối hợp với Hiệp hội Khách sạn Đà Nẵng tổ chức khóa đào tạo.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors duration-300">
+                            <span>Xem chi tiết</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <!-- Footer Content -->
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand Section -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <img src="https://static.wixstatic.com/media/bc87b8_91f521019b8d4ed1a3bb8bd39a44a0db~mv2.png/v1/fill/w_88,h_78,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bc87b8_91f521019b8d4ed1a3bb8bd39a44a0db~mv2.png" 
+                                 alt="DHA Logo" 
+                                 class="w-16 h-16 object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">DHA</h3>
+                            <p class="text-white/70">Danang Hotel Association</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 leading-relaxed">
+                        Hiệp hội Khách sạn Đà Nẵng - Nơi kết nối và phát triển ngành du lịch khách sạn tại Đà Nẵng.
+                    </p>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-primary">Thông tin liên hệ</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-white/60 text-sm">Email</p>
+                                <a href="mailto:hoikhachsandanang@gmail.com" class="text-white hover:text-primary transition-colors duration-300">
+                                    hoikhachsandanang@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-white/60 text-sm">Địa chỉ</p>
+                                <p class="text-white">Đà Nẵng, Việt Nam</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Section -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-primary">Theo dõi chúng tôi</h3>
+                    <p class="text-white/60">
+                        Kết nối với chúng tôi trên các mạng xã hội để cập nhật tin tức mới nhất.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="group w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fab fa-facebook-f text-white group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="group w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fab fa-twitter text-white group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="group w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fab fa-instagram text-white group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="group w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fab fa-linkedin-in text-white group-hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 border-t border-white/10">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-white/50 text-sm">
+                        © 2024 by DHA. Proudly created with modern web technologies.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-white/50 hover:text-primary transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-white/50 hover:text-primary transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-white/50 hover:text-primary transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-dark/98');
+                header.classList.remove('bg-dark/95');
+            } else {
+                header.classList.add('bg-dark/95');
+                header.classList.remove('bg-dark/98');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards for animation
+        document.querySelectorAll('.group').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.animate-float');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                // Toggle mobile menu visibility
+                mobileMenu.classList.toggle('hidden');
+                
+                // Change icon between hamburger and X
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.className = 'fas fa-bars text-xl';
+                } else {
+                    menuIcon.className = 'fas fa-times text-xl';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = 'fas fa-bars text-xl';
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = 'fas fa-bars text-xl';
+                }
+            });
+        }
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
